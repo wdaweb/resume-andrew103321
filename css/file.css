@@ -1,0 +1,46 @@
+tr  >td >input{
+    font-size: 20px;
+    } 
+    tr>td>textarea{
+    font-size: 20px;
+  
+    }  
+#resume_list
+{
+    display:flex;
+    font-size:25px;
+    justify-content: space-between;
+    cursor: pointer;
+    
+}
+#resume_list > div:active{
+    color: #555;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    background:red;
+}
+#content >div{
+    font-size: 30px;
+}
+tr>td>input{
+    font-size: 20px;
+    padding: 5px 10px;
+}
+tr>td>textarea{
+    font-size: 20px;
+  
+}
+#content>div>textarea:hover{
+    background-color: #fefadf;
+}
+.div_add>table>tbody>tr>td{
+    width: 120px;
+    height: 40px;
+    font-size: 20px;
+}
+.div_add>table>tbody>tr>td>button{
+    width: 120px;
+    height: 40px;
+    font-size: 20px;
+
+}
