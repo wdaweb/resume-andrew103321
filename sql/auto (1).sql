@@ -30,8 +30,18 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `auto` (
   `id` int(2) UNSIGNED NOT NULL,
-  `auto` text COLLATE utf8mb4_unicode_ci NOT NULL
+  `auto` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sh` int(11) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- 傾印資料表的資料 `auto`
+--
+
+INSERT INTO `auto` (`id`, `auto`, `sh`) VALUES
+(1, '321', 0),
+(2, '321', 0),
+(3, '321', 1);
 
 --
 -- 已傾印資料表的索引
@@ -51,7 +61,7 @@ ALTER TABLE `auto`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `auto`
 --
 ALTER TABLE `auto`
-  MODIFY `id` int(2) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(2) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

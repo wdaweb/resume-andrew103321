@@ -32,9 +32,19 @@ CREATE TABLE `school` (
   `id` int(2) UNSIGNED NOT NULL,
   `school` text COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '科系',
   `depname` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `mode` int(2) NOT NULL,
-  `License` text COLLATE utf8mb4_unicode_ci NOT NULL
+  `mode` varchar(2) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `License` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sh` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- 傾印資料表的資料 `school`
+--
+
+INSERT INTO `school` (`id`, `school`, `depname`, `mode`, `License`, `sh`) VALUES
+(1, '321', '', '畢業', '', 0),
+(2, '321', '', '畢業', '', 0),
+(3, '321', '', '畢業', '', 1);
 
 --
 -- 已傾印資料表的索引
@@ -54,7 +64,7 @@ ALTER TABLE `school`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `school`
 --
 ALTER TABLE `school`
-  MODIFY `id` int(2) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(2) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

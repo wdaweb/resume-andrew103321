@@ -43,7 +43,7 @@ CREATE TABLE `data` (
 --
 
 INSERT INTO `data` (`id`, `name`, `addr`, `tel`, `birthday`, `email`, `des`) VALUES
-(1, 'ban', '三重', 123456789, '2019-12-18', 'dasd@agmail.com', 'asdasdasd');
+(1, 'ban3123', '三重', 123456789, '2019-12-18', 'dasd@agmail.com', 'asdasdasd');
 
 --
 -- 已傾印資料表的索引

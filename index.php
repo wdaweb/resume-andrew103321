@@ -12,7 +12,6 @@ include_once "./base.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/all.min.css">
     <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./css/all.min.css">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
@@ -32,12 +31,12 @@ include_once "./base.php";
             background: rgba(55, 61, 73, 0.975);
         }
         body{
-            background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7));
+            background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(./bg.jpg);
             background-size: cover;
             background-attachment: fixed;
             background-position:center ;
             font-family:var(--font-family-sans-serif),'Microsoft JHengHei';
-}
+        }
         a{
             text-decoration: none;
             color: white
@@ -79,23 +78,49 @@ include_once "./base.php";
         #content_list{
             position:relative;
             top: 195px;
-            left: 43%;
+            left: 30%;
 
         }
         #head_p{
-            position: relative;
-            top: 104px;
-            left: 17%;
+            position: absolute;
+            top: 196px;
+            left: 181px;
         }
         #center{
             width:50%;
             height:600px;
-            display:inline-block ;
             background:yellow;
+            background: rgba( 200, 200,200, 0.9);
             position: relative;
-            top: 104px;
-            left: 17%;
+            top: 120px;
+            left: 28%; 
+            font-size: 25px;
+
+           
+           
         }
+        .d1{
+            position: absolute;
+            top: -122px;
+            left: -16%;
+        }
+        #head_p2{
+    
+            position: absolute;
+            top: -195px;
+            left:  -18%;
+            display: flex;
+            justify-content: space-between;
+            width: 70%;
+            height: 500px;
+            flex-wrap: wrap;
+        }
+        #head_p2 div{
+            margin: 20px;
+    
+        }
+        
+        
 
     </style>
 
@@ -122,22 +147,27 @@ include_once "./base.php";
               </li>
               <li class="nav-item">
                   <a class="nav-link text-white" href="#" style='font-size:30px;'>
-                  <i class="far fa-calendar-alt"></i> 個人資訊
+                  <i class="fas fa-user-edit"></i></i> 個人資訊
                   </a>
               </li>
               <li class="nav-item">
                   <a class="nav-link text-white" href="#" style='font-size:30px;'>
-                  <i class="far fa-calendar-alt"></i> 個人資訊
+                  <i class="fas fa-tasks"></i></i> 學經歷
                   </a>
               </li>
               <li class="nav-item">
                   <a class="nav-link text-white" href="#" style='font-size:30px;'>
-                  <i class="far fa-calendar-alt"></i> 個人資訊
+                  <i class="far fa-images"></i> 自傳
                   </a>
               </li>
               <li class="nav-item">
                   <a class="nav-link text-white" href="#"  style='font-size:30px;'>
-                  <i class="far fa-images"></i> 作品介紹
+                  <i class="far fa-calendar-alt"></i> 求職條件/描述
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link text-white" href="#"  style='font-size:30px;'>
+                  <i class="fas fa-cubes"></i> 作品管理
                   </a>
               </li>
           </ul>
@@ -146,7 +176,7 @@ include_once "./base.php";
 <div id='center'>
 <div id="content_list">
             <div></div>
-            <div>
+            <div class='d1'>
                     <table>
                         <tr>
                             <td>姓名</td>
@@ -170,11 +200,11 @@ include_once "./base.php";
                         </tr>
                         <tr>
                             <td>簡介</td>
-                            <td><textarea name="des" id="des" cols="30" rows="10"></textarea></td>
+                            <td><textarea name="des" id="des" cols="30" rows="8"></textarea></td>
                         </tr>
                     </table>
                     </div>
-                <div>
+                <div class='d1'>
                 <table>
                     <tr>
                         <td>學校 :</td>
@@ -199,11 +229,11 @@ include_once "./base.php";
                 </table>
                 </div>
 
-                <div>
+                <div class='d1'>
                     自傳:
                     <textarea name="auto" id="auto" rows="15" style="font-size:20px; width: 510px;"></textarea>
                 </div>
-                <div>
+                <div class='d1'>
                 <table>
                     <tr>
                         <td>履歷名稱 :</td>
@@ -228,23 +258,38 @@ include_once "./base.php";
                     </tr>
                 </table>
                 </div> 
+            
+            <div id='head_p2'>
+                <?php
+
+                $rows = all("files", ['sh2' => 1]);
+                foreach ($rows as $r) {
+                    echo "<div>";
+                    echo "<img src=" . substr($r['path'], 1) . " style='width:120px;height:120px'; >";
+                    echo "</div>";
+                }
+
+                ?>
+            </div>
+            </div>
             </div>
         
-    <div id='head_p'>
-    <?php
-      
-              $rows = all("files",['sh'=>1]);
-              foreach($rows as $r){
+        <div id='head_p'>
+        <?php
+          
+                  $rows = all("files",['sh'=>1]);
+                  foreach($rows as $r){
+               
+                    echo "<img src=".substr($r['path'],1)." style='width:300px;height:300px'; >";
+                  }
            
-                echo "<img src=".substr($r['path'],1)." style='width:120px;height:120px'; >";
-              }
-       
-    ?>
-     </div>
-     </div>
+        ?>
+         </div>
+        
+   
     
     <div id="modal">
-        <div id="input">
+        <div id="input"  class='zoomInDown wow'> 
         <input type="hidden" value="" id="no">
         <span >帳號或密碼錯誤，請重新輸入</span>
             <form>
@@ -255,12 +300,15 @@ include_once "./base.php";
             </form>
         </div>
     </div>
+    
   
-            <script src="js/jquery-3.4.1.min.js"></script>
-            <script src="js/bootstrap.bundle.min.js"></script>
+           
+         <script src="./js/jquery-3.4.1.min.js"></script>
             <script src="./js/wow.min.js"></script>
+         <script src="./js/bootstrap.bundle.min.js"></script>
     <script>
-
+         new WOW().init()
+       
         $("#modal").hide();
         $("#content_list div").eq(1).hide();
         $("#content_list div").eq(1).siblings().hide();
@@ -366,21 +414,8 @@ include_once "./base.php";
        
         })
 
-   
 
-
-    
-    
-       
-  
-
-        
-
-       
-
-        
- 
-    
     </script>
+    
 </body>
 </html>

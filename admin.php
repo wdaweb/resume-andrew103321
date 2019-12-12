@@ -15,6 +15,7 @@ include_once "./base.php";
         }
         body{
             overflow:hidden;
+        
         }
         #main
         {   
@@ -145,18 +146,6 @@ include_once "./base.php";
             background-color: #fefadf;
         }
       
-        #img_flex{
-            /* width: 600px; */
-            /* position:absolute;
-            top: 44px;
-            left:126px; */
-         
-
-            display:flex;
-            justify-content:space-around;
-            flex-wrap:wrap;
-            
-        }
         #head{
                 position:absolute;
                 left:332px;
@@ -165,11 +154,11 @@ include_once "./base.php";
                 background:red;
         }
         
-        
       
     </style>
 </head>
 <body>
+    
 
     <div id="modal">
          <div id="input">
@@ -256,7 +245,8 @@ include_once "./base.php";
                 <?php
                 $r = find('files',['sh'=>1]);
                 $a  = substr($r['path'],1);
-                echo "<img src='$a' id='head_img' style='width:150px;height:190px;'>"
+                echo "<img src='$a' id='head_img' style='width:150px;height:190px;'>";
+             
                 ?>
             </div>
         </div>
@@ -292,7 +282,7 @@ include_once "./base.php";
     </div>
     
     </div>
-
+    <script src="./js/css-doodle.min.js"></script>
     <script src="./js/jquery-3.4.1.min.js"></script>
     <script>
 

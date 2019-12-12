@@ -33,16 +33,25 @@ CREATE TABLE `files` (
   `name` varchar(168) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '原始檔名',
   `type` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '檔案類型',
   `path` varchar(168) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '檔案路徑',
-  `sh` int(11) NOT NULL DEFAULT 0
+  `sh` int(11) NOT NULL DEFAULT 0,
+  `sh2` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- 傾印資料表的資料 `files`
 --
 
-INSERT INTO `files` (`id`, `name`, `type`, `path`, `sh`) VALUES
-(2, 'dsd.jpg', 'image/jpeg', '../img/dsd.jpg', 1),
-(5, 'dsd.jpg', 'image/jpeg', '../img/dsd.jpg', 0);
+INSERT INTO `files` (`id`, `name`, `type`, `path`, `sh`, `sh2`) VALUES
+(13, 'dasdas.png', 'image/png', '../img/dasdas.png', 0, 1),
+(14, 'dasdas.png', 'image/png', '../img/dasdas.png', 0, 1),
+(15, 'dasdas.jpg', 'image/jpeg', '../img/dasdas.jpg', 0, 1),
+(16, 'dasdad.jpg', 'image/jpeg', '../img/dasdad.jpg', 0, 1),
+(17, 'dasdas.png', 'image/png', '../img/dasdas.png', 0, 1),
+(18, 'images.jpg', 'image/jpeg', '../img/images.jpg', 1, 1),
+(19, 'dsd.jpg', 'image/jpeg', '../img/dsd.jpg', 0, 1),
+(20, 'dsd.jpg', 'image/jpeg', '../img/dsd.jpg', 0, 1),
+(21, 'dasdas.png', 'image/png', '../img/dasdas.png', 0, 1),
+(22, 'dasdas.jpg', 'image/jpeg', '../img/dasdas.jpg', 0, 1);
 
 --
 -- 已傾印資料表的索引
@@ -62,7 +71,7 @@ ALTER TABLE `files`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `files`
 --
 ALTER TABLE `files`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '流水號', AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '流水號', AUTO_INCREMENT=23;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

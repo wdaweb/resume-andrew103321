@@ -36,17 +36,18 @@ CREATE TABLE `job` (
   `location` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `Million` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `thousand` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `time` date NOT NULL DEFAULT current_timestamp()
+  `time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `sh` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- 傾印資料表的資料 `job`
 --
 
-INSERT INTO `job` (`id`, `resume`, `jobname`, `jobtype`, `location`, `Million`, `thousand`, `time`) VALUES
-(1, '你好啊', '2', '3', '4', '5', '6', '2019-12-07'),
-(2, '123', '123', '123', '123', '123', '123', '2019-12-07'),
-(3, '321', '321', '321', '321', '321', '321', '2019-12-07');
+INSERT INTO `job` (`id`, `resume`, `jobname`, `jobtype`, `location`, `Million`, `thousand`, `time`, `sh`) VALUES
+(1, '123', '', '', '', '', '', '2019-12-12 11:27:06', 0),
+(2, '123', '', '', '', '', '', '2019-12-12 11:27:06', 0),
+(3, '123', '', '', '', '', '', '2019-12-12 11:27:06', 1);
 
 --
 -- 已傾印資料表的索引
