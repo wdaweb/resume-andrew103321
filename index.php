@@ -129,7 +129,7 @@ include_once "./base.php";
 <nav class="navbar navbar-expand-lg navbar-dark bg-success">
       
       <a class="navbar-brand" href="#" style='font-size:30px;'>
-          <img src="./img/top.png" width="50" height="50" class="d-inline-block">
+          <img src="./top.png" width="50" height="50" class="d-inline-block">
          
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
