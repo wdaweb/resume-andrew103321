@@ -266,6 +266,7 @@ include_once "./base.php";
                 foreach ($rows as $r) {
                     echo "<div>";
                     echo "<img src=" . substr($r['path'], 1) . " style='width:120px;height:120px'; >";
+                    echo "<span class='name-img'>".$r['name']."</span>";
                     echo "</div>";
                 }
 
@@ -279,7 +280,7 @@ include_once "./base.php";
           
                   $rows = all("files",['sh'=>1]);
                   foreach($rows as $r){
-               
+             
                     echo "<img src=".substr($r['path'],1)." style='width:300px;height:300px'; >";
                   }
            

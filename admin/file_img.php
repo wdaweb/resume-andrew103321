@@ -12,6 +12,12 @@
         input {
             padding: 10px 10px;
         }
+        .name-img{
+            position: relative;
+            left: 4%;
+        top: -46px;
+        }
+     
     </style>
 </head>
 
@@ -19,7 +25,8 @@
     <div>
         <form action="./api/file_img.php" method="post" enctype="multipart/form-data">
             <input type="file" name='file'>
-            <input type="submit" value="新增">
+            名稱 : <input type="text" name='file-name' id='file-name'>
+                <input type="submit" value="新增">
         </form>
 
         <div id='img_flex'>
@@ -30,8 +37,11 @@
             echo  "<form action='./api/update_img.php' method='post' enctype='multipart/form-data'>";
             foreach ($rows as $r) {
 
-                echo "<div >";
+                echo "<div>";
+                echo "<div>";
                 echo "<img src=" . substr($r['path'], 1) . " style='width:120px;height:120px';>";
+                echo "<input type='text' name='file-name[]' class='name-img' value=".$r['name']." >";
+                echo "</div>";
                 if ($r['sh'] == 1) {
                     echo "<input type='radio' name='sh' id='sh' style='width:20px;height:20px;' checked  value=" . $r['id'] . " >顯示大頭貼";
                 } else {
@@ -43,7 +53,7 @@
                 } else {
                     echo "<input type='checkbox' name='sh2[]' id='sh2' style='width:20px;height:20px;' value=" . $r['id'] . " >顯示做品";
                 }
-
+                
                 echo "<input type='checkbox' name='del[]' id='del' value=" . $r['id'] . " style='width:20px;height:20px;'>刪除";
                 //  echo "<input type='button' data-photo=".substr($r['path'],1)." value='設定頭貼' class=imgid>";
                 echo "<input type='hidden' value=" . $r['id'] . " name='id[]'>";
